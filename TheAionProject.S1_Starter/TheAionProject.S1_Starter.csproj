@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Assets\ActionMenu.cs" />
     <Compile Include="Assets\Text.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="ConsoleUtilities\ConsoleLayout.cs" />
     <Compile Include="ConsoleUtilities\ConsoleTheme.cs" />
     <Compile Include="ConsoleUtilities\ConsoleWindowControl.cs" />
