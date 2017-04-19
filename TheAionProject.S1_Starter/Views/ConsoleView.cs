@@ -75,9 +75,9 @@ namespace QuestWar
         /// get a action menu choice from the user
         /// </summary>
         /// <returns>action menu choice</returns>
-        public AdventurerAction GetActionMenuChoice(Menu menu)
+        public TravelerAction GetActionMenuChoice(Menu menu)
         {
-            AdventurerAction choosenAction = AdventurerAction.None;
+            TravelerAction choosenAction = TravelerAction.None;
 
             //
             // TODO validate menu choices
@@ -248,9 +248,9 @@ namespace QuestWar
             Console.ForegroundColor = ConsoleTheme.MenuForegroundColor;
             int topRow = ConsoleLayout.MenuBoxPositionTop + 3;
 
-            foreach (KeyValuePair<char, AdventurerAction> menuChoice in menu.MenuChoices)
+            foreach (KeyValuePair<char, TravelerAction> menuChoice in menu.MenuChoices)
             {
-                if (menuChoice.Value != AdventurerAction.None)
+                if (menuChoice.Value != TravelerAction.None)
                 {
                     string formatedMenuChoice = ConsoleWindowHelper.ToLabelFormat(menuChoice.Value.ToString());
                     Console.SetCursorPosition(ConsoleLayout.MenuBoxPositionLeft + 3, topRow++);

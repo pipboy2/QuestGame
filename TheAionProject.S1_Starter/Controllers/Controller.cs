@@ -60,7 +60,7 @@ namespace QuestWar
         /// </summary>
         private void ManageGameLoop()
         {
-            AdventurerAction travelerActionChoice = AdventurerAction.None;
+            TravelerAction travelerActionChoice = TravelerAction.None;
 
             //
             // display splash screen
@@ -103,14 +103,14 @@ namespace QuestWar
                 //
                 switch (travelerActionChoice)
                 {
-                    case AdventurerAction.None:
+                    case TravelerAction.None:
                         break;
 
-                    case AdventurerAction.AdventurerInfo:
+                    case TravelerAction.AdventurerInfo:
                         _gameConsoleView.DisplayTravelerInfo();
                         break;
 
-                    case AdventurerAction.Exit:
+                    case TravelerAction.Exit:
                         _playingGame = false;
                         break;
 

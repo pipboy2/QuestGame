@@ -9,7 +9,7 @@ namespace QuestWar
     /// <summary>
     /// enum of all possible player actions
     /// </summary>
-    public enum AdventurerAction
+    public enum TravelerAction
     {
         None,
         MissionSetup,
