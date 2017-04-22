@@ -17,7 +17,10 @@ namespace QuestWar
         // declare game objects for the ConsoleView object to use
         //
         Adventurer _gameTraveler;
+        Universe _gameUnierse;
 
+
+        //test
         #endregion
 
         #region PROPERTIES
@@ -75,16 +78,28 @@ namespace QuestWar
         /// get a action menu choice from the user
         /// </summary>
         /// <returns>action menu choice</returns>
-        public TravelerAction GetActionMenuChoice(Menu menu)
+        public AdventurerAction GetActionMenuChoice(Menu menu)
         {
-            TravelerAction choosenAction = TravelerAction.None;
+            AdventurerAction choosenAction = AdventurerAction.None;
+            Console.CursorVisible = false;
 
             //
-            // TODO validate menu choices
+            // creat an array of valid keys from menu dictionary
             //
-            ConsoleKeyInfo keyPressedInfo = Console.ReadKey();
-            char keyPressed = keyPressedInfo.KeyChar;
+            char[] validKeys = menu.MenuChoices.Keys.ToArray();
+
+            //
+            // validate key pressed as in MenuChoices dictionary
+            //
+            char keyPressed;
+            do
+            {
+                ConsoleKeyInfo keyPressedInfo = Console.ReadKey(true);
+                keyPressed = keyPressedInfo.KeyChar;
+            } while (!validKeys.Contains(keyPressed));
+
             choosenAction = menu.MenuChoices[keyPressed];
+            Console.CursorVisible = true;
 
             return choosenAction;
         }
@@ -248,9 +263,9 @@ namespace QuestWar
             Console.ForegroundColor = ConsoleTheme.MenuForegroundColor;
             int topRow = ConsoleLayout.MenuBoxPositionTop + 3;
 
-            foreach (KeyValuePair<char, TravelerAction> menuChoice in menu.MenuChoices)
+            foreach (KeyValuePair<char, AdventurerAction> menuChoice in menu.MenuChoices)
             {
-                if (menuChoice.Value != TravelerAction.None)
+                if (menuChoice.Value != AdventurerAction.None)
                 {
                     string formatedMenuChoice = ConsoleWindowHelper.ToLabelFormat(menuChoice.Value.ToString());
                     Console.SetCursorPosition(ConsoleLayout.MenuBoxPositionLeft + 3, topRow++);

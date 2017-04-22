@@ -15,6 +15,7 @@ namespace QuestWar
 
         private ConsoleView _gameConsoleView;
         private Adventurer _gameTraveler;
+        private Universe _gameUniverse;
         private bool _playingGame;
 
         #endregion
@@ -60,7 +61,7 @@ namespace QuestWar
         /// </summary>
         private void ManageGameLoop()
         {
-            TravelerAction travelerActionChoice = TravelerAction.None;
+            AdventurerAction travelerActionChoice = AdventurerAction.None;
 
             //
             // display splash screen
@@ -103,14 +104,14 @@ namespace QuestWar
                 //
                 switch (travelerActionChoice)
                 {
-                    case TravelerAction.None:
+                    case AdventurerAction.None:
                         break;
 
-                    case TravelerAction.AdventurerInfo:
+                    case AdventurerAction.AdventurerInfo:
                         _gameConsoleView.DisplayTravelerInfo();
                         break;
 
-                    case TravelerAction.Exit:
+                    case AdventurerAction.Exit:
                         _playingGame = false;
                         break;
 

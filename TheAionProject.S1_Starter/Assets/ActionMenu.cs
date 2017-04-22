@@ -15,9 +15,9 @@ namespace QuestWar
         {
             MenuName = "MissionIntro",
             MenuTitle = "",
-            MenuChoices = new Dictionary<char, TravelerAction>()
+            MenuChoices = new Dictionary<char, AdventurerAction>()
                     {
-                        { ' ', TravelerAction.None }
+                        { ' ', AdventurerAction.None }
                     }
         };
 
@@ -25,9 +25,9 @@ namespace QuestWar
         {
             MenuName = "InitializeMission",
             MenuTitle = "Initialize Mission",
-            MenuChoices = new Dictionary<char, TravelerAction>()
+            MenuChoices = new Dictionary<char, AdventurerAction>()
                 {
-                    { '1', TravelerAction.Exit }
+                    { '1', AdventurerAction.Exit }
                 }
         };
 
@@ -35,11 +35,14 @@ namespace QuestWar
         {
             MenuName = "MainMenu",
             MenuTitle = "Main Menu",
-            MenuChoices = new Dictionary<char, TravelerAction>()
+            MenuChoices = new Dictionary<char, AdventurerAction>()
                 {
-                    { '1', TravelerAction.AdventurerInfo },
-                    { '2', TravelerAction.LookAround },
-                    { '3', TravelerAction.Travel },
+                    { '1', AdventurerAction.AdventurerInfo },
+                    { '2', AdventurerAction.LookAround },
+                    { '3', AdventurerAction.Travel },
+                    { '4', AdventurerAction.AdventurerLocationsVisited },
+                    { '5', AdventurerAction.ListWorldLocationDestinations },
+                    {'6', AdventurerAction.Exit }
                     
                 }
         };
